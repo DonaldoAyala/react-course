@@ -1,0 +1,35 @@
+main {
+    
+    .container {
+
+        table {
+            
+            .entry {
+                height: 100%;
+                .id {
+                    width: 5%;
+                }
+                .name {
+                    width: 15%;
+                }
+                .description {
+                    width: 65%;
+                    padding: 1rem;
+                }
+                .actions {
+                    display: flex;
+                    width: 15%;
+                    height: 100%;
+                    margin: auto;
+                    justify-content: center;
+                    align-items: center;
+
+                    button {
+                        display: inline;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

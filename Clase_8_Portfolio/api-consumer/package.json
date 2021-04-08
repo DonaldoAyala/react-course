@@ -1,0 +1,9 @@
+{
+  "name": "api-consumer",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel index.html -p 3030 --no-cache"
+  },
+  "main": "index.html",
+  "license": "MIT"
+}
