@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+#root {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.counter {
+    display: flex;
+    font-family: 'Zen Dots', cursive;
+    justify-content: center;
+}
+
+.increment {
+    display: flex;
+    justify-content: center;
+    font-family: 'Zen Dots', cursive;
+    width: 100%;
+}
+
+.increment-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.increment-controls button {
+    margin: 0 1rem;
+}
+
+.fighters {
+    display: flex;
+    justify-content: center;
+}
+
+.fighters button {
+    margin: 0 1rem;
+}
+
+.counter-section {
+    margin-bottom: 2rem;
+}
+
+.counter {
+    margin-bottom: 1rem;
+}
+
+.increment {
+    margin-bottom: 1rem;
+}
