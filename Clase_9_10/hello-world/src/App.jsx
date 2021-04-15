@@ -1,4 +1,5 @@
 //import User from "./User";
+import Title from "./Title";
 import {useState} from "react";
 
 const App = () => {
@@ -33,27 +34,27 @@ const App = () => {
 
     return (
         <>
-            <div className='counter-section'>
-                <div className='counter'>{counter}</div>
-                <div className='fighters'>
-                    <button onClick={subtract}> (ง •_•)ง Subtract</button>
-                    <button onClick={resetCounter}>Restart</button>
-                    <button onClick={add}> ผ(•̀_•́ผ) Add</button>
+            <div className="container">
+                <Title background='dark-background' content='React Counter Fight!' />
+                <Title content='Score'/>
+                <div className='counter-section'>
+                    <div className='counter'>{counter}</div>
+                    <div className='fighters'>
+                        <button onClick={subtract}> (ง •_•)ง Subtract</button>
+                        <button onClick={resetCounter}>Restart</button>
+                        <button onClick={add}> ผ(•̀_•́ผ) Add</button>
+                    </div>
+                </div>
+                <div className='increment-section'>
+                    <div className='increment'>{increment}</div>
+                    <div className="increment-controls">
+                        
+                        <button onClick={decreaseIncrement}>🔽</button>
+                        <button onClick={resetIncrement}>Reset</button>
+                        <button onClick={increaseIncrement}>🔼</button>
+                    </div>
                 </div>
             </div>
-            <div className='increment-section'>
-                <div className='increment'>{increment}</div>
-                <div className="increment-controls">
-                    
-                    <button onClick={decreaseIncrement}>🔽</button>
-                    <button onClick={resetIncrement}>Reset</button>
-                    <button onClick={increaseIncrement}>🔼</button>
-                </div>
-            </div>
-            {/* <h1 onClick={fn}>Hello World</h1>
-            {array.map((name, i) => (
-                <p key={i}>Hola {name}</p>
-            ))} */}
         </>
     );
 }
