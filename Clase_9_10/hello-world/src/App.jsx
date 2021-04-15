@@ -35,7 +35,7 @@ const App = () => {
     return (
         <>
             <div className="container">
-                <Title background='dark-background' content='React Counter Fight!' />
+                <Title id='big-title' content='React Counter Fight!' />
                 <Title content='Score'/>
                 <div className='counter-section'>
                     <div className='counter'>{counter}</div>

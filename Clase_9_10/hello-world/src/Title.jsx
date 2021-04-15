@@ -1,7 +1,7 @@
 const Title = (props) => {
     return (
         <>
-        <div className={props.background + ' ' + 'title'} >
+        <div id={props.id} className='title' >
             <h2>
                 {props.content}
             </h2>
