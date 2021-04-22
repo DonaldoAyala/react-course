@@ -25,6 +25,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("filter", filter);
   }, [filter])
+
   const handleChangeCompletedTodo = ( id ) => {
     const newTodos = todos.map(todo => {
       if (todo.id === id) {
@@ -49,17 +50,23 @@ function App() {
     setTodos(newTodos)
   }
 
+  const todosToShow = todos.filter(FILTER_MAP[filter]);
+
   return (
     <>
         <main>
-          <h1 id="title">Tasks to do</h1>
+          <div id="title">
+            <h1>Tasks to do</h1>
+          </div>
+          
           <Form todos={todos} setTodos={setTodos}/>
           <section id="filters">
             {filterkeys.map(filterkey => <button key={filterkey} onClick={() => setFilter(filterkey) }>{filterkey}</button>)}
           </section>
           <section id="todo-list">
-            {todos.length > 0 ? 
-            todos.filter(FILTER_MAP[filter]).map(({id, todo, completed}) => (
+            {
+            todosToShow.length > 0 ? 
+            todosToShow.map(({id, todo, completed}) => (
               <TodoItem 
                 key={id} 
                 id={id} 
@@ -70,7 +77,18 @@ function App() {
                 editTodo={editTodo}
               />
 
-            )) : <h3>No pending tasks 🥳</h3>
+            )) :  filter === "All" ? 
+                    <div className="feedback">
+                      <h3>No tasks to show 🐱‍👤</h3> 
+                    </div> :
+                  filter === "Completed" ? 
+                  <div className="feedback">
+                      <h3>You haven't completed any task 😢</h3>
+                    </div> :
+                    <div className="feedback">
+                      <h3>You have no pending tasks 🥳</h3>
+                    </div>
+
           
             }
           </section>

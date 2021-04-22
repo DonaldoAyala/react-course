@@ -12,7 +12,7 @@ const TodoItem = ({id, todo, completed, handleChangeCompletedTodo, deleteTodo, e
 
     if ( isEditing ) {
         return (
-            <div>
+            <div className="todo">
                 <input 
                     type="text" 
                     value={editedTodo} 
@@ -27,15 +27,15 @@ const TodoItem = ({id, todo, completed, handleChangeCompletedTodo, deleteTodo, e
     return (
         <div className="todo">
             <label htmlFor={`todo-${id}`}>{todo}</label>
-            <input 
-                type="checkbox" 
-                id={`todo-${id}`}
-                checked={completed}
-                onChange={() => handleChangeCompletedTodo(id)}
-            />
-            <div  className="actions">
-            <button onClick={() => setIsEditing(true)}> Edit </button>
-            <button onClick={() => deleteTodo(id)}> Remove </button>
+            <div className="actions">
+                <button onClick={() => setIsEditing(true)}> Edit </button>
+                <button onClick={() => deleteTodo(id)}> Remove </button>
+                <input 
+                    type="checkbox" 
+                    id={`todo-${id}`}
+                    checked={completed}
+                    onChange={() => handleChangeCompletedTodo(id)}
+                />
             </div>
         </div>
     )
