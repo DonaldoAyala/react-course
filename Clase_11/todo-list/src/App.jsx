@@ -15,7 +15,7 @@ const initialState = JSON.parse(localStorage.getItem("todos") || "[]" )
 const initialFilter = localStorage.getItem("filter") || "All";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(initialState);
   const [filter, setFilter] = useState(initialFilter);
 
   useEffect(() => {
